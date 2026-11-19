@@ -1,14 +1,14 @@
-﻿pipeline {
+pipeline {
     agent any
 
     stages {
-        stage('Get project from GitHub') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Install requirements') {
+        stage('Install dependencies') {
             steps {
                 bat 'py -m pip install -r requirements.txt'
             }
